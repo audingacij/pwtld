@@ -9,6 +9,26 @@ All necessary Node.js packages need to be installed using this command in the te
 ```bash
 npm install
 ```
+## 📌 Environment Variables Usage
+
+This project uses environment variables.
+Environment variables allow you to: configure the application
+without hardcoding sensitive data and keep
+secrets (API keys, URLs, passwords) outside your codebase.
+
+The test suite uses:
+
+    process.env.APP_URL
+
+This controls which environment your tests run against.
+
+Playwright tests read this value during:
+
+``` js
+await page.goto(process.env.APP_URL);
+```
+
+### How to use environment variables
 
 Create a .env file in the project and add:
 
